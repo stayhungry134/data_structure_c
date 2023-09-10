@@ -1,12 +1,20 @@
+<a name="index">**Index**</a>
+<a href="#0"> 第一章 引论</a>  
+&emsp;<a href="#1">基础的数学知识</a>  
+&emsp;&emsp;<a href="#2">指数</a>  
+&emsp;&emsp;<a href="#3">对数</a>  
+&emsp;&emsp;<a href="#4">级数</a>  
+&emsp;&emsp;<a href="#5">模运算</a>  
+&emsp;<a href="#6">递归简论</a>  
 [toc]
 
 数据结构与算法分析(C语言描述版)
 
-#  第一章 引论
+# <a name="0"> 第一章 引论</a><a style="float:right;text-decoration:none;" href="#index">[Top]</a>
 
-## 基础的数学知识
+## <a name="1">基础的数学知识</a><a style="float:right;text-decoration:none;" href="#index">[Top]</a>
 
-### 指数
+### <a name="2">指数</a><a style="float:right;text-decoration:none;" href="#index">[Top]</a>
 
 $$
 X^2X^B=X^{A+B} \\
@@ -16,7 +24,7 @@ X^N + X^N = 2 X^N \\
 2^N + 2^N = 2^{N+1}
 $$
 
-### 对数
+### <a name="3">对数</a><a style="float:right;text-decoration:none;" href="#index">[Top]</a>
 
 > 注：在计算机科学中，除非有特别的声明，所有的对数都是以2为底的
 
@@ -29,7 +37,7 @@ $$
 \log{AB} = \log{A} + \log{B}
 $$
 
-### 级数
+### <a name="4">级数</a><a style="float:right;text-decoration:none;" href="#index">[Top]</a>
 
 级数是一种数学概念，它是将一系列数值相加而得到的结果。一个级数通常包含无限多个项，这些项按照一定的规律逐个相加，从而形成一个序列的和。级数可以用来描述许多自然现象和数学问题，包括无限的几何图形、无穷级数、数学分析、和微积分等领域。
 $$
@@ -65,13 +73,13 @@ $$
 
 
 
-### 模运算
+### <a name="5">模运算</a><a style="float:right;text-decoration:none;" href="#index">[Top]</a>
 
 如果 N 整除 $A - B$，那么我们就说 A 与 B模 N 同余(congruent) ，记为   $A \equiv B(rood N)$  。 直
 观地看 ， 这意味着无论 A 还是 B 被 N 去除，所得余数都是相同的。 于是，$81\equiv 61 \equiv 1 (\bmod10)$。
 如同等号的情形一样，若 $A \equiv B(\bmod N)$ ，则 $A + C \equiv B + C(\bmod N)$以及 $AD \equiv BD(\bmod N) $
 
-## 递归简论
+## <a name="6">递归简论</a><a style="float:right;text-decoration:none;" href="#index">[Top]</a>
 
 在编写递归例程的时候，关键是要牢记递归的四条基本法则
 
