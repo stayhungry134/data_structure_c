@@ -1,20 +1,12 @@
-<a name="index">**Index**</a>
-<a href="#0"> 第一章 引论</a>  
-&emsp;<a href="#1">基础的数学知识</a>  
-&emsp;&emsp;<a href="#2">指数</a>  
-&emsp;&emsp;<a href="#3">对数</a>  
-&emsp;&emsp;<a href="#4">级数</a>  
-&emsp;&emsp;<a href="#5">模运算</a>  
-&emsp;<a href="#6">递归简论</a>  
 [toc]
 
 数据结构与算法分析(C语言描述版)
 
-# <a name="0"> 第一章 引论</a><a style="float:right;text-decoration:none;" href="#index">[Top]</a>
+#  第一章 引论
 
-## <a name="1">基础的数学知识</a><a style="float:right;text-decoration:none;" href="#index">[Top]</a>
+## 基础的数学知识
 
-### <a name="2">指数</a><a style="float:right;text-decoration:none;" href="#index">[Top]</a>
+### 指数
 
 $$
 X^2X^B=X^{A+B} \\
@@ -24,7 +16,7 @@ X^N + X^N = 2 X^N \\
 2^N + 2^N = 2^{N+1}
 $$
 
-### <a name="3">对数</a><a style="float:right;text-decoration:none;" href="#index">[Top]</a>
+### 对数
 
 > 注：在计算机科学中，除非有特别的声明，所有的对数都是以2为底的
 
@@ -37,7 +29,7 @@ $$
 \log{AB} = \log{A} + \log{B}
 $$
 
-### <a name="4">级数</a><a style="float:right;text-decoration:none;" href="#index">[Top]</a>
+### 级数
 
 级数是一种数学概念，它是将一系列数值相加而得到的结果。一个级数通常包含无限多个项，这些项按照一定的规律逐个相加，从而形成一个序列的和。级数可以用来描述许多自然现象和数学问题，包括无限的几何图形、无穷级数、数学分析、和微积分等领域。
 $$
@@ -73,13 +65,13 @@ $$
 
 
 
-### <a name="5">模运算</a><a style="float:right;text-decoration:none;" href="#index">[Top]</a>
+### 模运算
 
 如果 N 整除 $A - B$，那么我们就说 A 与 B模 N 同余(congruent) ，记为   $A \equiv B(rood N)$  。 直
 观地看 ， 这意味着无论 A 还是 B 被 N 去除，所得余数都是相同的。 于是，$81\equiv 61 \equiv 1 (\bmod10)$。
 如同等号的情形一样，若 $A \equiv B(\bmod N)$ ，则 $A + C \equiv B + C(\bmod N)$以及 $AD \equiv BD(\bmod N) $
 
-## <a name="6">递归简论</a><a style="float:right;text-decoration:none;" href="#index">[Top]</a>
+## 递归简论
 
 在编写递归例程的时候，关键是要牢记递归的四条基本法则
 
@@ -87,3 +79,22 @@ $$
 2. 不断推进： 对于那些需要推进递归求解的情形，每一次递归调用都必须要使求解状况朝接近基准情形的方向推进。
 3. 设计法则：假设所有的递归调用都能进行。
 4. 合成效益法则：在求解一个问题的同一实例时，切勿在不同的递归调用中做重复性的工作(就像线性规划求解斐波那契数列一样)。
+
+# 第二章 算法分析
+
+## 数学基础
+
+估计算法资源消耗所需的分析一般来说是一个理论问题，因此需要一套正式的系统构架，先从某些数学定义开始
+
+1. 若存在正常数 $c$ 和 $n_0$ 使得当 $N \geq n_0$ 时，$T(N) \leq cf(N)$，则记为 $T(N) = O(f(N))$。
+2. 如果存在正常数 $c$ 和 $n_0$ 使得当 $N \geq n_0$ 时，$T(N) \geq cg(N)$，则记为 $T(N) = \Omega(g(N))$。
+3. $T(N) = \Theta(h(N))$ 当且仅当 $T(N) = O(h(N))$ 且 $T(N) \Omega(h(N))$。
+4. 如果 $T(N) = \Theta(p(N))$ 当且仅当 $T(N) \ne \Theta(p(N))$，则 $T(N) = o(p(N))$。
+
+> 注解：
+>
+> 存在四个东西
+> 1. $T(N) = O( f(N) )$，表示一个函数（函数自变量为一个程序中给定的样本数量，因变量表示消耗的时间）。比如两个程序，第一个 $x^2+x+4$  和 第二个 $100x$，在 x 小于 100 的时候，第一个程序消耗的时间是小于第二个函数的，但是当 x 大于 100 的时候，第一个函数消耗的时间将会超过第二个函数。如果存在这种情况（就是在某一点之后，$100x$ 小于 $x^2 + x + 4$ 这种情况，那么就可以说 $100N = O(N^2)$（忽略比较小的那些项），可以简单理解为 $O(f(N))$ 是 $T(N)$ 的上界。
+> 2. $T(N) = \Omega( g(N) )$，结合第一个定义理解，可以理解为 T(N) 是 g(N) 的上界。
+> 3. $T(N) = \Theta( h(N) )$，表示 $T(N)$ 和 $g(N)$ 的增长率相同，即上面定义一和定义二同时满足。
+> 4. $T(N) = \omicron( p(N) )$，表示 $T(N)$ 的增长率小于 p(N) 的增长率（不存在相同的情况，这里和定义一不同）
