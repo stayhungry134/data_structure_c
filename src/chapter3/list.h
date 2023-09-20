@@ -7,9 +7,9 @@
 #ifndef DATA_STRUCTURE_LIST_H
 #define DATA_STRUCTURE_LIST_H
 // 这里先声明一个自定义结构类型，也就是链表的节点Node，然后在后面定义这个节点类型的组成定义
-struct Node;
+struct ListNode;
 // typedef 的意思就是，创建一个名为 PtrToNode 的新类型别名，它代表一个指向 struct Node 结构体的指针类型。
-typedef struct Node *PtrToNode;
+typedef struct ListNode *PtrToNode;
 typedef PtrToNode List;
 typedef PtrToNode Position;
 /// 上面代码中，struct Node* 表示的是，一个指向 自定义节点类型 Node 的指针，就是它是一个指针，而它只能指向 Node 这个类型
@@ -44,7 +44,7 @@ ElementType retrieve(Position P);
 #endif //DATA_STRUCTURE_LIST_H
 
 // 这里定义了一个链表的节点，包含了一个值和一个指向下一个节点的指针
-struct Node{
+struct ListNode{
     ElementType  Element;
     Position Next;
 };
