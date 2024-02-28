@@ -14,6 +14,8 @@
 /**
  * Note: The returned array must be malloced, assume caller calls free().
  */
+
+#include "stdint.h"
 struct Node {
     int val;
     int numChildren;
