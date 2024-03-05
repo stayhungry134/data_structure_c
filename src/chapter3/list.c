@@ -8,6 +8,15 @@
 
 // 置空链表
 List makeEmpty(List L){
+    Position P, Temp;
+    P = L->Next;  // Start at the node after the header
+    L->Next = NULL;  // Header points to NULL, indicating an empty list
+    while (P != NULL){
+        Temp = P->Next;  // Save next node
+        free(P);  // Delete the node
+        P = Temp;  // Move to next node
+    }
+    return L;
 }
 
 // 如果链表为空，就返回 true
@@ -64,7 +73,7 @@ void FatalError(const char *message) {
 void insert(ElementType X, List L, Position P){
     // 先分配内存
     Position tem_cell;
-    tem_cell = malloc(sizeof (struct Node));
+    tem_cell = malloc(sizeof (struct ListNode));
     if (tem_cell == NULL){
         // 处理内存分配失败
         FatalError("Out of Space!!!");
