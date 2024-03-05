@@ -1,5 +1,5 @@
 /**
- * name: 19_删除链表的倒数第
+ * name: 19_删除链表的倒数第 N 个节点
  * create_time: 2024/2/27 9:15
  * author: Ethan
  * 
