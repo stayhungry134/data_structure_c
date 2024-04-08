@@ -2,6 +2,7 @@
 // Created by Ethan on 2023/9/28.
 //
 /// 给你单链表的头节点 head ，请你反转链表，并返回反转后的链表。
+#include "stdlib.h"
 
 struct ListNode {
     int val;
