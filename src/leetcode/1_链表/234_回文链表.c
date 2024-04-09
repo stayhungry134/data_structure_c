@@ -20,7 +20,7 @@ struct ListNode {
 };
 
 struct ListNode * reverseList(struct ListNode * head){
-    if(!head || head->next){
+    if(!head || !head->next){
         return head;
     }
     struct ListNode * newNode = reverseList(head->next);
@@ -35,14 +35,14 @@ bool isPalindrome(struct ListNode* head) {
     struct ListNode * fast = head;
     while (fast && fast->next){
         slow = slow->next;
-        fast = slow->next->next;
+        fast = fast->next->next;
     }
     // 反转后半部分的链表
     struct ListNode * rightReversed = reverseList(slow);
 
     // 判断反转后的后半部分链表是否与前半部分链表相同
     struct ListNode * leftPos = head;
-    struct ListNode * rightPos = slow;
+    struct ListNode * rightPos = rightReversed;
     while (leftPos && rightPos){
         if(leftPos->val != rightPos->val){
             return false;
