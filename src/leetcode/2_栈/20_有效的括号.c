@@ -14,18 +14,18 @@
 bool isValid(char* s) {
     char stack[10000] = {};
     int top = -1;
-    for (int i = 0; i < strlen(s) + 1; ++i) {
-        if(s[i] == ")"){
-            if(stack[top] != "(") return false;
-            top--;
+    for (int i = 0; i < strlen(s); ++i) {
+        if(s[i] == ')'){
+            if(stack[top] != '(') return false;
+            else top--;
             continue;
-        }if(s[i] == "]"){
-            if(stack[top] != "[") return false;
-            top--;
+        }if(s[i] == ']'){
+            if(stack[top] != '[') return false;
+            else top--;
             continue;
-        }if(s[i] == "}"){
-            if(stack[top] != "{") return false;
-            top--;
+        }if(s[i] == '}'){
+            if(stack[top] != '{') return false;
+            else top--;
             continue;
         }
         stack[top+1] = s[i];
