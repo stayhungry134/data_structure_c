@@ -31,5 +31,6 @@ bool isValid(char* s) {
         stack[top+1] = s[i];
         top++;
     }
-    return true;
+    if(top == -1) return true;
+    return false;
 }
